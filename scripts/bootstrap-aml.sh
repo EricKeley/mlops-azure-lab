@@ -84,9 +84,9 @@ YAML
   JOB_NAME=$(az ml job create --file "$HEALTH_JOB_FILE" --query name -o tsv)
   STATUS=""
 
-  for attempt in $(seq 1 20); do
+  for attempt in $(seq 1 80); do
     STATUS=$(az ml job show --name "$JOB_NAME" --query status -o tsv)
-    echo "[bootstrap-aml] health-check status [$attempt/20]: $STATUS"
+    echo "[bootstrap-aml] health-check status [$attempt/80]: $STATUS"
 
     case "$STATUS" in
       Completed)
