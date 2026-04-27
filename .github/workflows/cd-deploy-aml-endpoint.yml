@@ -115,8 +115,8 @@ jobs:
       - name: Invoke endpoint smoke test
         run: |
           TARGET="${{ github.event.inputs.target_env }}"
-          ENDPOINT_NAME="iris-endpoint-${TARGET}"
-          DEPLOYMENT_NAME="iris-deployment-${TARGET}"
+          ENDPOINT_NAME="iris-endpoint-${TARGET}-edu"
+          DEPLOYMENT_NAME="iris-deployment-${TARGET}-edu"
           REQUEST_FILE=$(mktemp /tmp/iris-request-XXXXXX.json)
 
           cat > "$REQUEST_FILE" <<'JSON'
